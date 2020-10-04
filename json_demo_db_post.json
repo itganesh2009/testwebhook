@@ -1,0 +1,46 @@
+{
+    "event":"invitee.created",
+    "time":"2018-03-14T19:16:01Z",
+    "payload":{
+      
+      "event":{  
+        "uuid":"BBBBBBBBBBBBBBBB",
+        "assigned_to":[  
+          "Jane Sample Data"
+        ],
+        "extended_assigned_to":[  
+          {  
+            "name":"Jane Sample Data",
+            "email":"user@example.com",
+            "primary":false
+          }
+        ]
+        
+      },
+      "invitee":{  
+        "uuid":"AAAAAAAAAAAAAAAA",
+        "first_name":"Joe",
+        "last_name":"Sample Data",
+        "name":"Joe Sample Data",
+        "email":"not.a.real.email@example.com",
+        "text_reminder_number":"+14045551234",
+        "timezone":"UTC",
+        "created_at":"2018-03-14T00:00:00Z",
+        "is_reschedule":false,
+        "payments":[  
+          {  
+            "id":"ch_AAAAAAAAAAAAAAAAAAAAAAAA",
+            "provider":"stripe",
+            "amount":1234.56,
+            "currency":"USD",
+            "terms":"sample terms of payment (up to 1,024 characters)",
+            "successful":true
+          }
+        ],
+        "canceled":false,
+        "canceler_name":null,
+        "cancel_reason":null,
+        "canceled_at":null
+      }
+    }
+  }
