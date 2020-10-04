@@ -3,28 +3,50 @@
 <body>
 
 
-<p id="act" onclick="jsonclick()">Click</p>
+<!-- <p id="act" onclick="jsonclick()">Click</p> -->
 <p id="demo"></p>
 
 <script>
-    function jsonclick(){
-var obj, dbParam, xmlhttp, myObj, x, txt = "";
-obj = { "limit":10 };
-dbParam = JSON.stringify(obj);
-xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    myObj = JSON.parse(this.responseText);
-   
-      txt += this.responseText;
-   
-    document.getElementById("demo").innerHTML = txt;
-  }
-};
 
-xmlhttp.open("POST", "https://itganesh2009.github.io/testwebhook/json_demo_db_post.json", true);
-xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xmlhttp.send("x=" + dbParam);}
+// const URL = 'https://jsonplaceholder.typicode.com/todos'
+// const data = {
+//    "userId": 1,
+//    "title": "delectus aut autem",
+//    "completed": false
+// };
+// // Send a post request
+// fetch(URL, {
+//    method: "POST",
+//    body: JSON.stringify(data),
+//    headers: {
+//       "Content-type": "application/json; charset=UTF-8"
+//    }
+// })
+
+
+const URL = 'https://calendly.com/api/v1/hooks'
+// Send a GET request without any data to the server
+fetch(URL, {
+   method: "GET",
+  
+   //body: JSON.stringify(data),
+   headers: {
+      "Content-type": "application/json",
+      "User-Agent": "Calendly",
+      "Accept-Encoding": "gzip",
+      "Access-Control-Allow-Origin":"*",
+      "X-Calendly-Hook-Id":"851691"
+
+
+   }
+})
+// Get the JSON data from the raw response
+   .then(res => res.json())
+
+// Print the result
+   .then(console.log)
+
+
 </script>
 
 
